@@ -30,8 +30,6 @@ if __name__ =='__main__':
     app.run(debug = True)
 ```
 
-
-## Image
-![Image 1](https://github.com/jeetendra29gupta/student_management_system/blob/master/image/Screenshot%20from%202020-12-07%2016-02-03.png)
-![Image 2](https://github.com/jeetendra29gupta/student_management_system/blob/master/image/Screenshot%20from%202020-12-07%2016-04-06.png)
-![Image 3](https://github.com/jeetendra29gupta/student_management_system/blob/master/image/Screenshot%20from%202020-12-07%2016-04-25.png)
+![Image 1](image/Screenshot from 2020-12-07 16-02-03.png)
+![Image 2](image/Screenshot from 2020-12-07 16-04-06.png)
+![Image 3](image/Screenshot from 2020-12-07 16-04-25.png)

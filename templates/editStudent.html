@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" >
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.png') }}" >
+</head>
+<body>
+{% include "header.html" ignore missing %}
+{% include "menu.html" ignore missing %}
+<div class="body-box">
+    <form action="/update" method="post">
+        <input type="hidden" id="id" name="id" value="{{rows[0]['id']}}">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Full name ... " required class="input-type" value="{{rows[0]['name']}}">
+        <label for="mail">Email</label>
+        <input type="email" id="mail" name="mail" placeholder="Email Address ... " required class="input-type" value="{{rows[0]['email']}}">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number ... " required class="input-type" value="{{rows[0]['phone']}}">
+        <span class="left-box">
+            <label for="semester">Semester</label>
+        <select id="semester" name="semester" required class="input-type">
+            <option value="{{rows[0]['semester']}}" selected hidden>{{rows[0]['semester']}}</option>
+            <option value="First Semester">First Semester</option>
+            <option value="Second Semester">Second Semester</option>
+            <option value="Third Semester">Third Semester</option>
+            <option value="Fourth Semester">Fourth Semester</option>
+        </select>
+        </span>
+        <span class="right-box">
+             <label for="subject">Subject</label>
+            <select id="subject" name="subject" required class="input-type">
+             <option value="{{rows[0]['subject']}}" selected hidden>{{rows[0]['subject']}}</option>
+            <option value="Architecture">Architecture</option>
+            <option value="Accounting">Accounting</option>
+            <option value="Management">Management</option>
+            <option value="Finance">Finance</option>
+            <option value="Computer">Computer Science</option>
+            <option value="Electronic">Electronic Engineering</option>
+            <option value="Nursing">Nursing</option>
+        </select>
+        </span>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% include "footer.html" ignore missing %}
+</body>
+</html>

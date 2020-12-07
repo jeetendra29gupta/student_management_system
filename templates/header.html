@@ -1,0 +1,12 @@
+<div id="headerDiv">
+    <span id="title">Student Management System</span>
+    <span id="dateTime">Date Time</span>
+</div>
+
+<script>
+    setInterval(function(){
+        fetch('{{ request.url_root }}dateTime')
+		.then(response => response.text())
+		.then(data => document.getElementById("dateTime").innerHTML=data);
+	}, 1000);
+</script>

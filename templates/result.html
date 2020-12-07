@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Refresh" content="10; url={{ request.url_root }}">
+    <title>Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" >
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.png') }}" >
+</head>
+<body>
+{% include "header.html" ignore missing %}
+{% include "menu.html" ignore missing %}
+<div class="body-box">
+{% if success_message %}
+<h1 class="success_message"> {{success_message}} </h1>
+{% endif %}
+{% if error_message %}
+<h1 class="error_message">{{error_message}}</h1>
+{% endif %}
+</div>
+{% include "footer.html" ignore missing %}
+</body>
+</html>

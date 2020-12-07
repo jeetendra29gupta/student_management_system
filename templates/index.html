@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" >
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.png') }}" >
+</head>
+<body>
+{% include "header.html" ignore missing %}
+{% include "menu.html" ignore missing %}
+<div class="body-box">
+<div class="scrollingTable">
+        <table class="style-table">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+      <th>Semester</th>
+    <th>Subject</th>
+      <th>Action</th>
+  </tr>
+    {% for row in rows %}
+            <tr>
+               <td>{{row["name"]}}</td>
+               <td>{{row["email"]}}</td>
+                <td>{{row["phone"]}}</td>
+                <td>{{row["semester"]}}</td>
+                <td>{{row["subject"]}}</td>
+                <td>
+				    <a href="edit/{{row['id']}}" class="edit_btn" >Edit</a>
+			        <a href="delete/{{row['id']}}" class="del_btn">Delete</a>
+			    </td>
+            </tr>
+         {% endfor %}
+</table>
+</div></div>
+{% include "footer.html" ignore missing %}
+</body>
+</html>
